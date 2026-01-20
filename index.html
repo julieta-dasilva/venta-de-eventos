@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="obligatorio 2025 p1 ">
+	<link rel="stylesheet" href="estilos.css">
+	<title>obligatorio </title>
+</head>
+
+<body>
+
+	<div id="contenedor">
+		<header>
+			<img id="logo" src="img/logo.png" alt="logo" />
+			<nav>
+				<ul id="navPrincipal">
+					<li>
+						<a href="#iniciarSesion" id="menuIniciarSecion">iniciar sesion</a>
+					</li>
+					<li><a href="#sectionRegistro" id="menuRegistrarse">registrarse</a></li>
+					</li>
+
+				</ul>
+				<ul id="navCliente">
+					<li><a href="#explorarConciertos" id="menuExplorarConciertos">Explorar Conciertos</a></li>
+					<li><a href="#reservarConciertos" id="menuReservarEntradas">reservar Entradas</a></li>
+					<li><a href="#historialDeReservas" id="menuHistorialDeRservas">historial de reservas</a></li>
+					<li>
+						<a href="#cerrar" id="btnCerrarSesionCliente">cerrar</a>
+					</li>
+				</ul>
+
+				<ul id="navAdmin">
+					<li><a href="#tablaPendientes" id="menuListarYreservar">Listar Reservas</a></li>
+					<li><a href="#formAgregarConciertoYeventos" id="menuAgregarCioncierto">Agregar conciertos</a></li>
+					<li><a href="#tablaDeConciertosAgregadosxAdmin" id="menuAdminstrarConciertos">Administrar conciertos</a></li>
+					<li><a href="#seccionInformeGanancias">infrome de ganancias</a></li>
+					<li>
+						<a href="#cerrar" id="btncerrarSesionAdmin">cerrar</a>
+					</li>
+				</ul>
+
+			</nav>
+		</header>
+		<!-- FIN CABEZAL -->
+
+		<main>
+
+			<!-- TITULOS -->
+			<h1>Sistema de contratacion de eventos y conciertos</h1>
+			<h2>Obligatorio Programacion 1</h2>
+
+			<hr>
+			<!-- SECCIONES -->
+			<section id="iniciarSesion" class="seccion">
+
+				<h3>Iniciar sesion</h3>
+
+				<form id="formularioLogin">
+
+
+					<input type="text" id="nombreUsr" placeholder="ingrese  su usuario" required />
+					<input type="password" id="txtcontra" placeholder="ingrese contraseña" required />
+
+					<input type="button" value="iniciar sesion" id="btnlogin" />
+
+
+				</form>
+				<article id="sectionRegistro">
+
+					<form id="formRegistrar">
+
+						<h3 id="registrarse">Registrarse</h3>
+
+						<label for="txtUsuario">ingrese su nombre</label>
+						<input type="text" id="txtUsuario" required />
+
+						<label for="txtApellido">ingrese su apellido</label>
+						<input type="text" id="txtApellido" required />
+
+						<label for="txtNombreUsr">ingrese su nombre de usuario</label>
+						<input type="text" id="txtNombreUsr" required />
+
+						<label for="contraRegistro">ingrese contraseña</label>
+						<input type="password" id="contraRegistro" required />
+
+
+						<input type="button" value="Registrarse" id="btnRegistrar" /><br />
+					</form>
+					<hr>
+				</article>
+			</section>
+			<section id="sectionCliente" class="seccion">
+
+				<article id="explorarConciertos">
+					<h3>Explorar Conciertos</h3>
+					<input type="button" value="EXPLORAR Conciertos" id="btnMostrarEventos">
+					<input type="button" value="Cerrar visualizacion" id="btnCerrartablaDeConciertosYeventos">
+				</article> <br><hr>
+
+
+				
+				<article id="seccionConciertosEnOferta">
+			  </article>
+
+
+
+
+
+				<article id="reservarConciertos">
+
+					<h3>Reservar conciertos </h3>
+
+					<form id="formReservar">
+						<label for="slcCconciertos">Concierto:</label>
+						<select id="slcCconciertos">
+						</select>
+						<input type=" number" min="1" required placeholder="ingrese cantidad de entradas"
+						id="cantEntradas">
+						<input type="date" id="fecha" required>
+						<input type="button" value="Reservar" id="btnReservar">
+						<input type="reset" value="Borrar Campos">
+
+
+
+
+					</form> <br><hr>
+					<h3 id="historialDeReservas">Ver historial de reservas</h3>
+					<table>
+						<thead>
+							<tr>
+								
+								<th>Concierto</th>
+								<th>Precio por entrada</th>
+								<th>cantidad de entradas</th>
+								<th>Monto total de reserva</th>
+								<th>Estado de la Reserva</th>
+							
+
+							</tr>
+						</thead>
+						<tbody id="tablaConciertosDelCliente">
+	
+						</tbody>
+					</table>
+					<br>
+					<hr>
+				</article>
+			</section>
+			<hr>
+			<!--seccion DEL ADMINISTRADOR -->
+			<section id="sectionAdmin" class="seccion"> 
+
+				<h3>Agregar conciertos</h3>
+				<h3>Ingrese concierto</h3>
+				<form id="formAgregarConciertoYeventos">
+					<label for="txtNombreConcierto">Ingrese nombre del evento</label>
+					<input type="text" id="txtNombreConcierto" required>
+					<label for="precioEntrada">ingrese precio de la entrada</label>
+					<input type="number" id="precioEntrada" required />
+					<label for="cantCupos">ingrese cupos disponibles</label>
+					<input type="number" id="cantCupos" required />
+					<label>concierto en oferta</label>
+					<select id="slcEnOferta">
+						<option value="">SELECIONE</option>
+						<option value="SI">SI</option>
+						<option value="NO">NO</option>
+					</select>
+					<select id="foto">
+						<option value="img/rolling.png">Foto 1</option>
+						<option value="img/ACDC.JPG">Foto 2</option>
+						<option value="img/kiss.jpg">Foto 3</option>
+						<option value="img/foto1.jpg">Concierto</option>
+					</select>
+
+					<img src="img/rolling.png" alt="Foto" width="100px" id="imgConciertosGenerica">
+					<input type="button" value="Agregar Concierto" id="btnAgregarConcierto" />
+					<input type="button" value="Mostrar Tabla de conciertos" id="btnMostrarConciertosAdmin" />
+					<br />
+
+				</form>
+
+
+				<article>
+
+					<h3>Administrar conciertos</h3>
+
+					<table id="tablaDeConciertosAgregadosxAdmin">
+
+						<tbody>
+
+						</tbody>
+					</table>
+
+					<h3>Lista de reservas</h3>
+					<table>
+						<caption>PENDIENTES</caption>
+						<thead>
+
+							<tr>
+								
+								<th>Nombre </th>
+								<th>Cantidad de Entradas</th>
+								<th>Estado</th>
+								<th>Monto total a pagar</th>
+								<th>saldo del cliente</th>
+								<th>Procesar</th>
+							</tr>
+						</thead>
+						<tbody id="tablaPendientes">
+						</tbody>
+					</table> <br> 
+
+					
+					<table>
+						<caption>APROBADAS</caption>
+						<thead>
+
+							<tr>
+								
+								<th>Nombre </th>
+								<th>Cantidad de Entradas</th>
+								<th>Estado</th>
+								<th>Monto total a pagar</th>
+								<th>saldo del cliente</th>
+							</tr>
+						</thead>
+						<tbody id="tablaDeAprobadas">
+						
+						</tbody>
+					</table> <br><br>
+
+
+
+					<table>
+						<caption>CANCELADAS</caption>
+						<thead>
+
+							<tr>
+								
+								<th>Nombre </th>
+								<th>Cantidad de Entradas</th>
+								<th>Estado</th>
+								<th>Monto total a pagar</th>
+								<th>saldo del cliente</th>
+							</tr>
+						</thead>
+						<tbody id="tablaCanceladas">
+						
+
+						</tbody>
+					</table>
+				</article>
+
+
+
+
+
+
+				<article id="seccionInformeGanancias">
+					<h2>Informe de Ganancias</h2>
+			  
+					<button id="btnInformeGanancias">Generar Informe</button>
+			  
+					<p id="resultadoGanancias"></p>
+			  
+					<div id="tablaGanancias"></div>
+			  </article>
+
+					
+
+
+				
+
+			</section>
+
+
+
+
+			<footer>
+			
+				<p>Juleta da silva</p> 
+				<p>313554</p>
+			</footer>
+			<!-- FIN PIE -->
+		</main>
+	</div>
+	<!-- FIN CONTENEDOR -->
+
+
+
+	<script src="src/clases.js"></script>
+	<script src="src/codigo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+@charset "utf-8";
+/* CSS Document */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
+
+/* 🎨 Paleta moderna - temática musical */
+:root {
+  --color-bg: #0b0b12;              /* fondo principal, oscuro elegante */
+  --color-surface: #1a1a26;         /* fondo secundario (contenedores) */
+  --color-accent: #7a5cff;          /* violeta neón */
+  --color-highlight: #00ffc6;       /* cian vibrante */
+  --color-text: #f5f5f5;            /* texto principal */
+  --color-text-muted: #b5b5c3;      /* texto secundario */
+  --color-border: #2c2c3a;          /* bordes suaves */
+  --color-button: #7a5cff;          /* botón principal */
+  --color-button-hover: #00ffc6;    /* hover del botón */
+  --color-header: #11111a;          /* header/footer */
+  --color-link: #00ffc6;            /* links */
+  --color-table-odd: #1f1f2b;       /* filas impares */
+  --color-table-even: #2a2a38;      /* filas pares */
+}
+
+*{
+  scroll-behavior: smooth;
+}
+/* Fuente y fondo general */
+body {
+ 
+  font-family: "Roboto Flex", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+ 
+
+ 
+}
+
+/* Contenedor general */
+#contenedor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+/* Contenido principal */
+main {
+  padding: 20px;
+  min-height: 250px;
+}
+
+/* Títulos */
+h1,
+h2,
+h3,
+h5,
+h6 {
+  color: var(--color-accent);
+}
+
+h2 {
+  font-weight: 800;
+  color: var(--color-highlight);
+  text-transform: uppercase;
+}
+
+h4 {
+  margin-top: 26px;
+  font-weight: 600;
+  color: var(--color-highlight);
+}
+
+/* NAV */
+#navPrincipal, #navCliente, #navAdmin{
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  max-width: 700px;
+}
+
+#navPrincipal li, #navCliente li, #navAdmin li {
+  list-style-type: none;
+  padding: 10px;
+  margin: 5px;
+  float: left;
+}
+
+header img {
+  margin: 20px;
+  width: 100px;
+  border: 1px solid var(--color-border);
+}
+
+#navPrincipal a, #navCliente a, #navAdmin a  {
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#navPrincipal a:hover, #navAdmin a:hover, #navCliente a:hover {
+  color: var(--color-highlight);
+}
+
+header {
+  background-color: var(--color-header);
+  clear: both;
+  color: var(--color-text);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* TABLAS */
+table,
+th,
+td {
+  border-collapse: collapse;
+  border: none;
+  padding: 8px 15px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  text-align: center;
+}
+
+
+
+thead {
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-header);
+  color: var(--color-highlight);
+  font-weight: normal;
+}
+
+table tr:nth-child(odd) td {
+  background-color: var(--color-table-odd);
+}
+
+table tr:nth-child(even) td {
+  background-color: var(--color-table-even);
+}
+
+/* Labels */
+label {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  margin: 0 10px 10px 0;
+  display: block;
+  min-width: 200px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-highlight);
+  box-shadow: 0 0 6px var(--color-highlight);
+}
+
+/* Área de texto */
+.textArea {
+  min-height: 80px;
+}
+
+/* Botones */
+input[type="button"],
+button {
+  background-color: var(--color-button);
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+  min-width: 100px;
+  height: 35px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="button"]:hover {
+  background-color: var(--color-button-hover);
+  border: 1px solid var(--color-highlight);
+  color: var(--color-bg);
+}
+
+input[type="button"]:disabled {
+  background-color: #555;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 19px;
+  background-color: var(--color-header);
+  clear: both;
+  padding: 20px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+footer a {
+  cursor: pointer;
+  color: var(--color-link);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--color-accent);
+}
